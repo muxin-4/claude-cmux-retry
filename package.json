@@ -1,0 +1,30 @@
+{
+  "name": "claude-cmux-retry",
+  "version": "0.1.0",
+  "description": "cmux 用户专用的 Claude Code 限额自动重试工具",
+  "type": "module",
+  "bin": {
+    "claude-cmux-retry": "./bin/cli.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "claude",
+    "cmux",
+    "auto-retry",
+    "rate-limit",
+    "claude-code"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muxin-4/claude-cmux-retry"
+  }
+}
