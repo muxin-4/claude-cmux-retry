@@ -86,6 +86,18 @@ claude-cmux-retry stop
 | 会话保活 | tmux session | cmux 自带 |
 | 启动方式 | wrapper 劫持 claude 命令 | CLI 或 cmux hook |
 
+## 关于会话保活
+
+tmux 的 server 是独立后台进程，退出终端 app 进程也不受影响。cmux 的进程跑在 cmux app 内部，两者有区别：
+
+| 场景 | tmux | cmux |
+|------|------|------|
+| 关闭终端窗口 | 进程继续跑 | 进程继续跑 |
+| 退出 app | 进程继续跑 | 进程中断（重启后可恢复会话） |
+| Mac 休眠（合盖） | 暂停，唤醒后继续 | 暂停，唤醒后继续 |
+
+日常使用中只要 **Mac 不休眠、cmux 不退出**，监控进程就一直在跑。睡觉时让 Claude 自动继续干活完全没问题。
+
 ## 卸载
 
 ```bash
